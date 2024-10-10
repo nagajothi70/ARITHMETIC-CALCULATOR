@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arithmetic Calculator</title>
+</head>
+<body>
+    <div id="cont">
+        <h1>Arithmetic Calculator</h1>
+        
+        <label>A=</label>
+        <input type="text" id="input1" size="3">
+        
+        <select id="input2">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+            <option value="**">**</option>
+        </select>
+        
+        <label>B=</label>
+        <input type="text" id="input3" size="3">  <br><br>
+        
+        <button type="submit">Perform</button>
+        
+    </div>
+<script>
+const button = document.querySelector('button')
+button.addEventListener('click',call)
+
+
+function call()
+{
+let input1 = Number(document.getElementById('input1').value)
+let input2 =String(document.getElementById ("input2").value)
+let input3 = Number(document.getElementById('input3').value)
+
+let add = input1 + input3
+let sub = input1 - input3
+let multi = input1 * input3
+let divisio = input1 / input3
+let mods = input1 % input3
+let power = input1 ** input3
+
+const resultdiv = document.createElement('div')
+resultdiv.id="output"
+document.getElementById('cont').appendChild(resultdiv)
+
+if(input2 === "+")
+{
+    document.getElementById('output').innerHTML=add
+}
+else if(input2 === "-")
+{
+    document.getElementById('output').innerHTML=sub
+}
+else if(input2 === "*")
+{
+    document.getElementById('output').innerHTML=multi
+}
+else if(input2 === "/")
+{
+    document.getElementById('output').innerHTML=divisio
+}
+else if(input2 === "%")
+{
+    document.getElementById('output').innerHTML=mods
+}
+else
+{
+    document.getElementById('output').innerHTML=power
+}
+
+}
+
+  
+  
+  
+  
+</script>
+</body>
+</html>
